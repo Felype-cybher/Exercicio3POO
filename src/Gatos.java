@@ -1,3 +1,5 @@
+package src;
+
 public class Gatos extends Animal {
     public String raca;
 
@@ -6,16 +8,27 @@ public class Gatos extends Animal {
         this.raca = raca;
     }
 
-    public String consultar(){
+
+    @Override
+    public String consultar() {
         return null;
     }
 
-    public String vacinar(){
-        return null;
-    }
 
-    public String exame(){
-        return null;
-    }
+    public boolean vacinar(){
+            if (getVacinado() == false){
+                setVacinado(true);
+                System.out.println("Cão foi vacinado");
+            }else {
+                System.out.println("Cão já está vacinado");
+            }
+            return getVacinado();
+        }
 
+    @Override
+    public String exame() {
+        return "";
+    }
 }
+
+
