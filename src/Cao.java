@@ -1,3 +1,5 @@
+package src;
+
 public class Cao extends Animal {
     private String raca;
 
@@ -14,15 +16,32 @@ public class Cao extends Animal {
         this.raca = raca;
     }
 
-    public String consultar(){
-        return null;
+    @Override
+    public String consultar() {
+        exame();
+        if (getVacinado() == false) {
+            vacinar();
+        }
+        return consultar();
+
     }
 
-    public String vacinar(){
-        return null;
+    public boolean vacinar() {
+        if (getVacinado() == false) {
+            setVacinado(true);
+            System.out.println("Cão foi vacinado");
+        } else {
+            System.out.println("Erro! Cão já está vacinado");
+        }
+        return getVacinado();
     }
 
-    public String exame(){
-        return null;
+    public String exame() {
+        if (getVacinado() == true) {
+            System.out.println("O animal já esta em ótimas condições");
+        }else {
+            System.out.println("O animal precisa estar com a vacina em dia!");
+        }
+        return exame();
     }
 }
