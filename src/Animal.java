@@ -1,3 +1,5 @@
+package src;
+
 public abstract class Animal {
 
     public String nomeDoAnimal;
@@ -43,7 +45,7 @@ public abstract class Animal {
 
     public abstract String consultar();
 
-    public abstract String vacinar();
+    public abstract boolean vacinar();
 
     public abstract String exame();
 
